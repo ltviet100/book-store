@@ -1,3 +1,36 @@
 /* Import bootstrap */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-default {
+  background-color: #2ecc71 !important;
+  border-color: #2ecc71 !important;
+}
+
+.white-link {
+  color: #fff !important;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #666;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+}
+
+header {
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+footer {
+  height: 60px;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+}

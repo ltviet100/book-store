@@ -34,3 +34,57 @@ footer {
   text-align: center;
   padding-top: 20px;
 }
+
+#books-index {
+  text-align: center;
+}
+
+#books-index img {
+  width: 100%;
+  padding: 3px;
+  border: 1px solid #ccc;
+}
+
+#books-index h3 {
+  height: 40px;
+  font-size: 18px;
+}
+
+#books-index .btn {
+  display: block;
+  margin-top: 20px;
+}
+
+#list {
+  color: #fff;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+
+#books-show h2 {
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.books-show-left {
+  float: left;
+  width: 40%;
+}
+
+.books-show-right {
+  float: left;
+  width: 60%;
+  margin-top: 10px;
+  padding-left: 100px;
+}
+
+#books-show .btn {
+  margin: 5px 0 0 25px;
+}
+
+#books-show p {
+  text-align: justify;
+}

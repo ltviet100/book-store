@@ -1,0 +1,5 @@
+<%= provide (:title), 'All Publisher' %>
+
+<% @publishers.each do |publisher| %>
+  <p id="list"><%= publisher.name %></p>
+<% end %>

@@ -5,6 +5,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @categories = Category.all
+    @books = @category.books
   end
 
   def new
@@ -14,9 +16,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "Added Category"
+      flash[:success] = "Added Category"
       redirect_to categories_path
     else
+      flash[:info] = "Failed Add Category"
       render 'new'
     end
   end
@@ -26,16 +29,17 @@ class CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      flash[:notice] = "Updated category"
+      flash[:success] = "Updated category"
       redirect_to categories_path
     else
+      flash[:info] = "Failed Update Category"
       render 'edit'
     end
   end
 
   def destroy
     @category.destroy
-    flash[:notice] = "Destroyed Category"
+    flash[:danger] = "Destroyed Category"
     redirect_to categories_path
   end
 

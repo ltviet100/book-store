@@ -14,9 +14,10 @@ class AuthorsController < ApplicationController
   def create
         @author = Author.new(author_params)
     if @author.save
-      flash[:notice] = "Added author"
+      flash[:success] = "Added Author"
       redirect_to authors_path
     else
+      flash[:info] = "Failed Add Author"
       render 'new'
     end
   end
@@ -26,16 +27,17 @@ class AuthorsController < ApplicationController
 
   def update
     if @author.update(author_params)
-      flash[:notice] = "Updated Author"
+      flash[:success] = "Updated Author"
       redirect_to authors_path
     else
+      flash[:info] = "Failed Add Author"
       render 'edit'
     end
   end
 
   def destroy
     @author.destroy
-    flash[:notice] = "Destroyed Author"
+    flash[:danger] = "Destroyed Author"
     redirect_to authors_path
   end
 

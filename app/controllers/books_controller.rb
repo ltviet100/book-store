@@ -19,9 +19,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "Added Book"
+      flash[:success] = "Added Book"
       redirect_to books_path
     else
+      flash[:info] = "Failed Add Book"
       render 'new'
     end
 
@@ -32,16 +33,17 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      flash[:notice] = "Updated Book"
+      flash[:success] = "Updated Book"
       redirect_to book_path(@book)
     else
+      flash[:info] = "Failed Update Book"
       render 'edit'
     end
   end
 
   def destroy
     @book.destroy
-    flash[:notice] = "Destroyed Book"
+    flash[:danger] = "Destroyed Book"
     redirect_to books_path
   end
 

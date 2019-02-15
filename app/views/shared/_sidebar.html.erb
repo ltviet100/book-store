@@ -10,3 +10,14 @@
     </ul>
   </div>
 <% end %>
+
+<% if params[:controller] == 'books' && params[:action] == "index" || params[:action] == "show" %>
+  <ul class="list-group">
+    <% @categories.each do |category| %>
+      <li class="list-group-item">
+        <span class="badge"><%= category.books.count %></span>
+        <%= category.name %>
+      </li>
+    <% end %>
+    </ul>
+<% end %>

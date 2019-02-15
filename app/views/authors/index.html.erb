@@ -1,5 +1,19 @@
 <%= provide (:title), 'All Authors' %>
 
-<% @authors.each do |author| %>
-  <p id="list"><%= author.first_name + " " + author.last_name %></p>
-<% end %>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Author</th>
+      <th scope="col" colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.first_name + " " + author.last_name %></td>
+        <td><%= link_to 'Edit', edit_author_path(author) %></td>
+        <td><%= link_to 'Delete', author_path(author), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

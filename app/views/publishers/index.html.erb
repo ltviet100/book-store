@@ -1,5 +1,20 @@
 <%= provide (:title), 'All Publisher' %>
 
-<% @publishers.each do |publisher| %>
-  <p id="list"><%= publisher.name %></p>
-<% end %>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Publisher</th>
+      <th scope="col" colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @publishers.each do |publisher| %>
+      <tr>
+        <td><%= publisher.name %></td>
+        <td><%= link_to 'Edit', edit_publisher_path(publisher) %></td>
+        <td><%= link_to 'Delete', publisher_path(publisher), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

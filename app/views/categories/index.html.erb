@@ -1,5 +1,19 @@
 <%= provide (:title), 'All Categories' %>
 
-<% @categories.each do |category| %>
-  <p id="list"><%= category.name %></p>
-<% end %>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col" colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Delete', category_path(category), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

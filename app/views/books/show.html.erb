@@ -18,12 +18,16 @@
       <li><strong>Pages: </strong><%= @book.page %></li>
     </ul>
 
-    <%= link_to "Link to Buy", @book.buy_link, class:"btn btn-success", target: "_blank" %>
+    <%= link_to "Link to Buy " + @book.price, @book.buy_link, class:"btn btn-success", target: "_blank" %>
   </div>
 
   <div class="clearfix"></div>
 
-  <h4>Excerpt</h4>
+  <h4><strong>Excerpt</strong></h4>
 
   <p><%= @book.excerpt %></p>
+
+  <h5><strong>Functions</strong></h5>
+
+  <p><%= link_to 'Edit', edit_book_path(@book) %> | <%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: "Are you sure?" } %></p>
 </div>

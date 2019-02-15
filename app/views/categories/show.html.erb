@@ -1,0 +1,19 @@
+<%= provide (:title), 'Detail Category' %>
+
+<% if @books.count == 0 %>
+  <h3>No Books For This Category</h3>
+<% else %>
+  <div id="books-index">
+    <% @books.each_slice(4) do |book| %>
+      <div class="row">
+        <% book.each do |book| %>
+          <div class="col-md-3 col-sm-3">
+            <h4><%= book.title %></h4>
+            <%= image_tag(book.image.url, class:'media-object') %>
+            <%= link_to 'Read More', book_path(book), class:"btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,7 +1,10 @@
-/* Import bootstrap */
+/* =========================== Import Bootstrap ========================*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "toastr";
+
+/* Style for navigation */
 .navbar-default {
   background-color: #2ecc71 !important;
   border-color: #2ecc71 !important;
@@ -10,6 +13,9 @@
 .white-link {
   color: #fff !important;
 }
+/* ==================================================================== */
+
+/* =======================Style for Main Elements =====================*/
 
 body {
   font-family: 'Arial', sans-serif;
@@ -30,10 +36,13 @@ header {
 
 footer {
   height: 60px;
-  margin-top: 20px;
+  margin-top: 412px;
   text-align: center;
   padding-top: 20px;
 }
+/* ==================================================================== */
+
+/* =======================Style for Show All Book =====================*/
 
 #books-index {
   text-align: center;
@@ -54,17 +63,12 @@ footer {
   display: block;
   margin-top: 20px;
 }
+/* ==================================================================== */
 
-#list {
-  color: #fff;
-  display: inline-block;
-  padding: 5px;
-  border-radius: 5px;
-  margin-right: 5px;
-}
+/* =====================Style for Show Detail Book ====================*/
 
 
-#books-show h2 {
+#books-show h2, #books-show h2 a {
   background-color: #f4f4f4;
   padding: 10px;
 }
@@ -88,3 +92,29 @@ footer {
 #books-show p {
   text-align: justify;
 }
+/* ==================================================================== */
+
+.table-hover {
+  background-color: #2ecc71 !important;
+}
+
+.table {
+  width: 80% !important;
+}
+
+thead {
+  color: #fff;
+}
+/* ==================================================================== */
+
+// #books-show h2 a:link,
+// #books-show h2 a:visited {
+//   text-decoration: none;
+//   font-size: 18px;
+// }
+
+.category-show img {
+  width: 100%;
+}
+
+

@@ -2,9 +2,9 @@
   <!-- Check for errors -->
   <% if @book.errors.any? %>
     <% @book.errors.full_messages.each do |msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
+      <div class="alert alert-danger" role="alert">
+        <%= msg %>
+      </div>
     <% end %>
   <% end %>
   <!-- End -->

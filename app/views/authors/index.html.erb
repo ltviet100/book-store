@@ -1,0 +1,5 @@
+<%= provide (:title), 'All Authors' %>
+
+<% @authors.each do |author| %>
+  <p id="list"><%= author.first_name + " " + author.last_name %></p>
+<% end %>

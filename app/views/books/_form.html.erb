@@ -1,0 +1,61 @@
+<%= form_for @book do |f| %>
+  <!-- Check for errors -->
+  <% if @book.errors.any? %>
+    <% @book.errors.full_messages.each do |msg| %>
+      <ul>
+        <li><%= msg %></li>
+      </ul>
+    <% end %>
+  <% end %>
+  <!-- End -->
+  <div class="form-group">
+    <%= f.text_field :title, class:"form-control", placeholder: 'title' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :isbn, class:"form-control", placeholder: 'isbn' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.select :author_id, Author.all.collect { |a| [a.first_name + ' ' + a.last_name, a.id] }, { include_blank: "Select Author" }, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] }, { include_blank: "Select Category" }, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.select :publisher_id, Publisher.all.collect { |p| [p.name, p.id] }, { include_blank: "Select Publisher" }, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :format, class:"form-control", placeholder: 'format' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :excerpt, class:"form-control", placeholder: 'excerpt', rows: 5 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :page, class:"form-control", placeholder: 'pages' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :price, class:"form-control", placeholder: 'price' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :year, class:"form-control", placeholder: 'year' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :buy_link, class:"form-control", placeholder: 'link buy' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.file_field :image, class: 'form-control' %>
+  </div>
+
+  <%= f.submit class:"btn btn-primary" %>
+  <%= link_to 'Cancel', books_path, class:"btn btn-default" %>
+<% end %>
